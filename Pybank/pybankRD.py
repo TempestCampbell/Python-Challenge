@@ -42,19 +42,30 @@ with open(budget_csv, 'r') as csvfile:
             profit_change = current_month_profit - previous_month_profit
             profit_changeS.append(profit_change)
             previous_month_profit=current_month_profit
+            
         print(f'Total Months:{total_months}')
 
 ##The net total amount of "Profit/Losses" over the entire period
 net_total = sum(profit_changeS)
-print(f'Total Profit/Loss: ${net_total}')
+
+print(f'Net Total Profit/Losses over an Entire Period: ${net_total}')
+
 ##The average of the changes in "Profit/Losses" over the entire period
-average_change = statistics.mean(round(profit_changeS))
+average_change = round(net_total/total_months-1)
+
+print(f'Average Changes in Profit/Losses Over an Entire Period: ${average_change}')
 
 ##The greatest increase in profits (date and amount) over the entire period
-#greastest_increase_profit= 
+greastest_increase_profit= max(profit_changeS)
+greatest_increase_month=budget_monthS[profit_changeS.index(greastest_increase_profit)]
+
+print(f'Greastest Increase in Profits Over the Entire Period: {greatest_increase_month} (${greastest_increase_profit})')
 
 ##The greatest decrease in losses (date and amount) over the entire period
-#greatest_decrease_loss=
+greatest_decrease_loss = min(profit_changeS)
+greatest_decrease_month = budget_monthS[profit_changeS.index(greatest_decrease_loss)]
+
+print(f'Greastest Decrease in Profits Over the Entire Period: {greatest_decrease_month} (${greatest_decrease_loss})')
 
 ##In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
