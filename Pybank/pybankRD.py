@@ -25,16 +25,12 @@ with open(budget_csv, 'r') as csvfile:
     csvreader=csv.reader(csvfile, delimiter = ',')
     header=next(csvreader)
 
-    #print(csvreader)
-
     #Read each row of data after the header
     for row in csvreader:
         total_months +=1
         budget_monthS.append(row[0])
         net_total += int(row[1])
         current_month_profit= int(row[1])
-
-        #print(row)
 
 
 ##The total number of months included in the data set
@@ -43,7 +39,7 @@ with open(budget_csv, 'r') as csvfile:
             profit_changeS.append(profit_change)
             previous_month_profit=current_month_profit
             
-        print(f'Total Months:{total_months}')
+    print(f'Total Months:{total_months}')
 
 ##The net total amount of "Profit/Losses" over the entire period
 net_total = sum(profit_changeS)
@@ -69,3 +65,7 @@ print(f'Greastest Decrease in Profits Over the Entire Period: {greatest_decrease
 
 ##In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
+#save_file= "buget_data_results.txt"
+#csvpath=os.path.join("Analysis","save_file")
+#with open (csvpath,'w') as text:
+#    text.write("Financial Analysis")
