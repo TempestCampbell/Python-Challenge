@@ -1,16 +1,10 @@
 import os
 import csv
-import statistics
 
 #Path to collect data from the Resources file
 budget_csv = os.path.join('Resources', 'budget_data.csv')
 
-#Define the function
-#def print_totals(budget_data):
-
 #Variables
-#budget_month = str(budget_data[0])
-#budget_profit_loss = int(budget_data[1])
 total_months= 0
 net_total=0
 current_month_profit=0
