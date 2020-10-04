@@ -65,7 +65,13 @@ print(f'Greastest Decrease in Profits Over the Entire Period: {greatest_decrease
 
 ##In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
-#save_file= "buget_data_results.txt"
-#csvpath=os.path.join("Analysis","save_file")
-#with open (csvpath,'w') as text:
-#    text.write("Financial Analysis")
+Analysis_file= "buget_data_results.txt"
+csvpath=os.path.join("Analysis","Analysis_file")
+with open (csvpath,'w') as text:
+    text.write("Financial Analysis")
+    text.write('\n'+"--------------------------")
+    text.write(f'\n Total Months:{total_months}')
+    text.write(f'\n Net Total Profit/Losses over an Entire Period: ${net_total}')
+    text.write(f'\n Average Changes in Profit/Losses Over an Entire Period: ${average_change}')
+    text.write(f'\n Greastest Increase in Profits Over the Entire Period: {greatest_increase_month} (${greastest_increase_profit})')
+    text.write(f'\n Greastest Decrease in Profits Over the Entire Period: {greatest_decrease_month} (${greatest_decrease_loss})')
