@@ -1,20 +1,23 @@
 import os
 import csv
+import statistics
 
 #Path to collect data from the Resources file
 budget_csv = os.path.join('..', 'Resources', 'budget_data.csv')
 
+#Define the function
+def print_totals(budget_data):
+    
+
+
 #Variables
-buget_date=
-budget_month=
-budget_year=
-
-
+budget_month = str(budget_data[0])
+budget_profit_loss = int(budget_data[1])
 
 #Read the csv file
 with open(budget_csv, 'r') as csvfile:
     #Split the data on dash
-    csvreader=csv.reader(csvfile, delimiter = '-')
+    csvreader=csv.reader(csvfile, delimiter = ',')
 
     print(csvreader)
 
@@ -27,10 +30,10 @@ with open(budget_csv, 'r') as csvfile:
 total_months=
 
 ##The net total amount of "Profit/Losses" over the entire period
-net_total=
+net_total=sum(budget_profit_loss)
 
 ##The average of the changes in "Profit/Losses" over the entire period
-average_change=
+average_change=mean(budget_profit_loss)
 
 ##The greatest increase in profits (date and amount) over the entire period
 greaster_increase_profit=
