@@ -59,7 +59,6 @@ with open(election_csv, 'r') as csvfile:
         winner_popularvote = votes
         total_votes_won = key
 
-
 ##In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
 Analysis_file="election_data_results.txt"
@@ -67,10 +66,10 @@ csvpath=os.path.join("Analysis", Analysis_file)
 
 with open(csvpath,'w') as text:
     text.write('Election Results')
-    text.write('-------------------------------')
-    text.write(f'Total Votes: {total_votes_cast}')
-    text.write("--------------------------------")
-    text.write(f'{key}:{percentage_votes}% ({votes})')
-    text.write("--------------------------------")
+    text.write('\n -------------------------------')
+    text.write(f' \n Total Votes: {total_votes_cast}')
+    text.write(" \n --------------------------------")
+    text.write(f'\n {key}:{percentage_votes}% ({votes})')
+    text.write("\n --------------------------------")
     text.write
 
